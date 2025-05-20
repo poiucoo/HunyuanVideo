@@ -3,13 +3,13 @@
 [English](./README.md)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/logo.png"  height=100>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/logo.png"  height=100>
 </p>
 
 # HunyuanVideo: A Systematic Framework For Large Video Generation Model
 
 <div align="center">
-  <a href="https://github.com/Tencent/HunyuanVideo"><img src="https://img.shields.io/static/v1?label=HunyuanVideo Code&message=Github&color=blue"></a> &ensp;
+  <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo"><img src="https://img.shields.io/static/v1?label=HunyuanVideo Code&message=Github&color=blue"></a> &ensp;
   <a href="https://aivideo.hunyuan.tencent.com"><img src="https://img.shields.io/static/v1?label=Project%20Page&message=Web&color=green"></a> &ensp;
   <a href="https://video.hunyuan.tencent.com"><img src="https://img.shields.io/static/v1?label=Playground&message=Web&color=green"></a>
 </div>
@@ -43,8 +43,8 @@
 
 ## 🔥🔥🔥 更新!!
 
-* 2025年03月06日: 🌅 开源 [HunyuanVideo-I2V](https://github.com/Tencent/HunyuanVideo-I2V), 支持高质量图生视频。
-* 2025年01月13日: 📈 开源 Penguin Video [基准测试集](https://github.com/Tencent/HunyuanVideo/blob/main/assets/PenguinVideoBenchmark.csv) 。
+* 2025年03月06日: 🌅 开源 [HunyuanVideo-I2V](https://github.com/Tencent-Hunyuan/HunyuanVideo-I2V), 支持高质量图生视频。
+* 2025年01月13日: 📈 开源 Penguin Video [基准测试集](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/assets/PenguinVideoBenchmark.csv) 。
 * 2024年12月18日: 🏃‍♂️ 开源 HunyuanVideo [FP8 模型权重](https://huggingface.co/tencent/HunyuanVideo/blob/main/hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt)，节省更多 GPU 显存。
 * 2024年12月17日: 🤗 HunyuanVideo已经集成到[Diffusers](https://huggingface.co/docs/diffusers/main/api/pipelines/hunyuan_video)中。
 * 2024年12月03日: 🚀 开源 HunyuanVideo 多卡并行推理代码，由[xDiT](https://github.com/xdit-project/xDiT)提供。
@@ -94,7 +94,7 @@
   - [x] FP8 量化版本
   - [x] Penguin Video 基准测试集 
   - [x] ComfyUI
-- [HunyuanVideo (图生视频模型)](https://github.com/Tencent/HunyuanVideo-I2V)
+- [HunyuanVideo (图生视频模型)](https://github.com/Tencent-Hunyuan/HunyuanVideo-I2V)
   - [x] 推理代码 
   - [x] 模型权重 
 
@@ -147,7 +147,7 @@ HunyuanVideo 是一个全新的开源视频生成大模型，具有与领先的�
 
 HunyuanVideo 是一个隐空间模型，训练时它采用了 3D VAE 压缩时间维度和空间维度的特征。文本提示通过一个大语言模型编码后作为条件输入模型，引导模型通过对高斯噪声的多步去噪，输出一个视频的隐空间表示。最后，推理时通过 3D VAE 解码器将隐空间表示解码为视频。
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/overall.png"  height=300>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/overall.png"  height=300>
 </p>
 
 
@@ -157,7 +157,7 @@ HunyuanVideo 是一个隐空间模型，训练时它采用了 3D VAE 压缩时�
 
 HunyuanVideo 采用了 Transformer 和 Full Attention 的设计用于视频生成。具体来说，我们使用了一个“双流到单流”的混合模型设计用于视频生成。在双流阶段，视频和文本 token 通过并行的 Transformer Block 独立处理，使得每个模态可以学习适合自己的调制机制而不会相互干扰。在单流阶段，我们将视频和文本 token 连接起来并将它们输入到后续的 Transformer Block 中进行有效的多模态信息融合。这种设计捕捉了视觉和语义信息之间的复杂交互，增强了整体模型性能。
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/backbone.png"  height=350>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/backbone.png"  height=350>
 </p>
 
 ### **MLLM 文本编码器**
@@ -168,13 +168,13 @@ HunyuanVideo 采用了 Transformer 和 Full Attention 的设计用于视频生�
 
 由于 MLLM 是基于 Causal Attention 的，而 T5-XXL 使用了 Bidirectional Attention 为扩散模型提供更好的文本引导。因此，我们引入了一个额外的 token 优化器来增强文本特征。
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/text_encoder.png"  height=275>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/text_encoder.png"  height=275>
 </p>
 
 ### **3D VAE**
 我们的 VAE 采用了 CausalConv3D 作为 HunyuanVideo 的编码器和解码器，用于压缩视频的时间维度和空间维度，其中时间维度压缩 4 倍，空间维度压缩 8 倍，压缩为 16 channels。这样可以显著减少后续 Transformer 模型的 token 数量，使我们能够在原始分辨率和帧率下训练视频生成模型。
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/3dvae.png"  height=150>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/3dvae.png"  height=150>
 </p>
 
 ### **Prompt 改写**
@@ -494,10 +494,10 @@ HunyuanVideo 的开源离不开诸多开源工作，这里我们特别感谢 [SD
 
 ## Star 趋势
 
-<a href="https://star-history.com/#Tencent/HunyuanVideo&Date">
+<a href="https://star-history.com/#Tencent-Hunyuan/HunyuanVideo&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Tencent/HunyuanVideo&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Tencent/HunyuanVideo&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Tencent/HunyuanVideo&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Tencent-Hunyuan/HunyuanVideo&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Tencent-Hunyuan/HunyuanVideo&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Tencent-Hunyuan/HunyuanVideo&type=Date" />
  </picture>
 </a>
