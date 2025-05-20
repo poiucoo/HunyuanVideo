@@ -238,7 +238,7 @@ Prompt 改写模型可以直接使用 [Hunyuan-Large](https://github.com/Tencent
 
 首先克隆 git 仓库:
 ```shell
-git clone https://github.com/tencent/HunyuanVideo
+git clone https://github.com/Tencent-Hunyuan/HunyuanVideo
 cd HunyuanVideo
 ```
 
