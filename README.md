@@ -3,13 +3,13 @@
 [中文阅读](./README_zh.md)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/logo.png"  height=100>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/logo.png"  height=100>
 </p>
 
 # HunyuanVideo: A Systematic Framework For Large Video Generation Model
 
 <div align="center">
-  <a href="https://github.com/Tencent/HunyuanVideo"><img src="https://img.shields.io/static/v1?label=HunyuanVideo Code&message=Github&color=blue"></a> &ensp;
+  <a href="https://github.com/Tencent-Hunyuan/HunyuanVideo"><img src="https://img.shields.io/static/v1?label=HunyuanVideo Code&message=Github&color=blue"></a> &ensp;
   <a href="https://aivideo.hunyuan.tencent.com"><img src="https://img.shields.io/static/v1?label=Project%20Page&message=Web&color=green"></a> &ensp;
   <a href="https://video.hunyuan.tencent.com"><img src="https://img.shields.io/static/v1?label=Playground&message=Web&color=green"></a>
 </div>
@@ -41,12 +41,12 @@ This repo contains PyTorch model definitions, pre-trained weights and inference/
 
 ## 🔥🔥🔥 News!!
 
-* Mar 06, 2025: 🌅 We release the [HunyuanVideo-I2V](https://github.com/Tencent/HunyuanVideo-I2V), an image-to-video model based on HunyuanVideo.
-* Jan 13, 2025: 📈 We release the [Penguin Video Benchmark](https://github.com/Tencent/HunyuanVideo/blob/main/assets/PenguinVideoBenchmark.csv).
+* Mar 06, 2025: 🌅 We release the [HunyuanVideo-I2V](https://github.com/Tencent-Hunyuan/HunyuanVideo-I2V), an image-to-video model based on HunyuanVideo.
+* Jan 13, 2025: 📈 We release the [Penguin Video Benchmark](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/assets/PenguinVideoBenchmark.csv).
 * Dec 18, 2024: 🏃‍♂️ We release the [FP8 model weights](https://huggingface.co/tencent/HunyuanVideo/blob/main/hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt) of HunyuanVideo to save more GPU memory.
 * Dec 17, 2024: 🤗 HunyuanVideo has been integrated into [Diffusers](https://huggingface.co/docs/diffusers/main/api/pipelines/hunyuan_video).
 * Dec 7, 2024: 🚀 We release the parallel inference code for HunyuanVideo powered by [xDiT](https://github.com/xdit-project/xDiT).
-* Dec 3, 2024: 👋 We release the inference code and model weights of HunyuanVideo. [Download](https://github.com/Tencent/HunyuanVideo/blob/main/ckpts/README.md).
+* Dec 3, 2024: 👋 We release the inference code and model weights of HunyuanVideo. [Download](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/ckpts/README.md).
 
 
 
@@ -138,7 +138,7 @@ using a large language model, and used as the conditions. Taking Gaussian noise 
 input, our generative model produces an output latent, which is then decoded to images or videos through
 the 3D VAE decoder.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/overall.png"  height=300>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/overall.png"  height=300>
 </p>
 
 
@@ -152,7 +152,7 @@ tokens and feed them into subsequent Transformer blocks for effective multimodal
 This design captures complex interactions between visual and semantic information, enhancing
 overall model performance.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/backbone.png"  height=350>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/backbone.png"  height=350>
 </p>
 
 ### **MLLM Text Encoder**
@@ -160,13 +160,13 @@ Some previous text-to-video models typically use pre-trained CLIP and T5-XXL as 
 Compared with CLIP, MLLM has demonstrated superior ability in image detail description
 and complex reasoning; (iii) MLLM can play as a zero-shot learner by following system instructions prepended to user prompts, helping text features pay more attention to key information. In addition, MLLM is based on causal attention while T5-XXL utilizes bidirectional attention that produces better text guidance for diffusion models. Therefore, we introduce an extra bidirectional token refiner to enhance text features.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/text_encoder.png"  height=275>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/text_encoder.png"  height=275>
 </p>
 
 ### **3D VAE**
 HunyuanVideo trains a 3D VAE with CausalConv3D to compress pixel-space videos and images into a compact latent space. We set the compression ratios of video length, space, and channel to 4, 8, and 16 respectively. This can significantly reduce the number of tokens for the subsequent diffusion transformer model, allowing us to train videos at the original resolution and frame rate.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/3dvae.png"  height=150>
+  <img src="https://raw.githubusercontent.com/Tencent-Hunyuan/HunyuanVideo/refs/heads/main/assets/3dvae.png"  height=150>
 </p>
 
 ### **Prompt Rewrite**
