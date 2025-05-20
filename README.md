@@ -234,7 +234,7 @@ The following table shows the requirements for running HunyuanVideo model (batch
 
 Begin by cloning the repository:
 ```shell
-git clone https://github.com/tencent/HunyuanVideo
+git clone https://github.com/Tencent-Hunyuan/HunyuanVideo
 cd HunyuanVideo
 ```
 
