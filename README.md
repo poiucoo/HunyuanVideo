@@ -73,6 +73,7 @@ If you develop/use HunyuanVideo in your projects, welcome to let us know.
 - HunyuanVideo Keyframe Control Lora: [hunyuan-video-keyframe-control-lora](https://github.com/dashtoon/hunyuan-video-keyframe-control-lora) by [dashtoon](https://github.com/dashtoon)
 - Sparse-VideoGen (Accelerate Video Generation with High Pixel-level Fidelity): [Sparse-VideoGen](https://github.com/svg-project/Sparse-VideoGen) by [University of California, Berkeley](https://svg-project.github.io/)
 - FramePack (Packing Input Frame Context in Next-Frame Prediction Models for Video Generation): [FramePack](https://github.com/lllyasviel/FramePack) by [Lvmin Zhang](https://github.com/lllyasviel) 
+- Jenga (Training-Free Efficient Video Generation via Dynamic Token Carving): [Jenga](https://github.com/dvlab-research/Jenga) by [DV Lab](https://github.com/dvlab-research)
 
 
 
