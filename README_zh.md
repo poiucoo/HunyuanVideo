@@ -44,6 +44,7 @@
 ## 🔥🔥🔥 更新!!
 
 * 2025年05月28日: 💃 开源 [HunyuanVideo-Avatar](https://github.com/Tencent-Hunyuan/HunyuanVideo-Avatar), 腾讯混元语音数字人模型。
+* 2025年05月09日: 🙆 开源 [HunyuanCustom](https://github.com/Tencent-Hunyuan/HunyuanCustom), 腾讯混元一致性视频生成模型。
 * 2025年03月06日: 🌅 开源 [HunyuanVideo-I2V](https://github.com/Tencent-Hunyuan/HunyuanVideo-I2V), 支持高质量图生视频。
 * 2025年01月13日: 📈 开源 Penguin Video [基准测试集](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/assets/PenguinVideoBenchmark.csv) 。
 * 2024年12月18日: 🏃‍♂️ 开源 HunyuanVideo [FP8 模型权重](https://huggingface.co/tencent/HunyuanVideo/blob/main/hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt)，节省更多 GPU 显存。
