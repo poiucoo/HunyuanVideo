@@ -76,7 +76,7 @@ If you develop/use HunyuanVideo in your projects, welcome to let us know.
 - Sparse-VideoGen (Accelerate Video Generation with High Pixel-level Fidelity): [Sparse-VideoGen](https://github.com/svg-project/Sparse-VideoGen) by [University of California, Berkeley](https://svg-project.github.io/)
 - FramePack (Packing Input Frame Context in Next-Frame Prediction Models for Video Generation): [FramePack](https://github.com/lllyasviel/FramePack) by [Lvmin Zhang](https://github.com/lllyasviel) 
 - Jenga (Training-Free Efficient Video Generation via Dynamic Token Carving): [Jenga](https://github.com/dvlab-research/Jenga) by [DV Lab](https://github.com/dvlab-research)
-
+- DCM (Dual-Expert Consistency Model for Efficient and High-Quality Video Generation): [DCM]([https://github.com/dvlab-research/Jenga](https://github.com/Vchitect/DCM)) by [Vchitect](https://github.com/Vchitect/DCM)
 
 
 ## 📑 Open-source Plan
