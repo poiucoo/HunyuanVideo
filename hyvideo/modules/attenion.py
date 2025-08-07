@@ -101,9 +101,28 @@ def attention(
     if mode == "torch":
         if attn_mask is not None and attn_mask.dtype != torch.bool:
             attn_mask = attn_mask.to(q.dtype)
-        x = F.scaled_dot_product_attention(
-            q, k, v, attn_mask=attn_mask, dropout_p=drop_rate, is_causal=causal
-        )
+        if cu_seqlens_q is None:
+            x = F.scaled_dot_product_attention(
+                q, k, v, attn_mask=attn_mask, dropout_p=drop_rate, is_causal=causal
+            )
+        else:
+            attn1 = F.scaled_dot_product_attention(
+                q[:, :, :cu_seqlens_q[1]],
+                k[:, :, :cu_seqlens_kv[1]],
+                v[:, :, :cu_seqlens_kv[1]],
+                attn_mask=attn_mask,
+                dropout_p=drop_rate,
+                is_causal=causal
+            )
+            attn2 = F.scaled_dot_product_attention(
+                q[:, :, cu_seqlens_q[1]:],
+                k[:, :, cu_seqlens_kv[1]:],
+                v[:, :, cu_seqlens_kv[1]:],
+                attn_mask=None,
+                dropout_p=drop_rate,
+                is_causal=False
+            )
+            x = torch.cat([attn1, attn2], dim=2)
     elif mode == "flash":
         x = flash_attn_varlen_func(
             q,
