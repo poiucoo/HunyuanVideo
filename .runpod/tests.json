@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "name": "video_generation_test",
+      "input": {
+        "prompt": "Generate a realistic video of a person talking in a room"
+      },
+      "timeout": 120000
+    }
+  ]
+}
