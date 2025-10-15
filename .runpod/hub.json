@@ -1,0 +1,17 @@
+{
+  "title": "HunyuanVideo",
+  "description": "Tencent HunyuanVideo: A systematic framework for large video generation model",
+  "type": "serverless",
+  "category": "video",
+  "iconUrl": "https://aivideo.hunyuan.tencent.com/favicon.ico",
+  "config": {
+    "runtime": "python",
+    "gpu": "RTX 4090",
+    "containerDiskInGb": 20,
+    "ports": [3000],
+    "env": {
+      "MODEL_NAME": "HunyuanVideo"
+    },
+    "entrypoint": "python gradio_server.py --port 3000"
+  }
+}
