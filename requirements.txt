@@ -11,4 +11,6 @@ loguru==0.7.2
 imageio==2.34.0
 imageio-ffmpeg==0.5.1
 safetensors==0.4.3
-gradio==5.0.0
+gradio==4.44.1
+torch==2.3.0
+torchvision==0.18.0
